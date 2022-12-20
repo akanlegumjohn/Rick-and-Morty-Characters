@@ -4,19 +4,20 @@ import characterService from './characterService';
 
 const initialState = {
   pageNumber: 1,
+  searchedName: ''.toLowerCase(),
   charactersDetails: {},
   isLoading: false,
   isSuccess: false,
   isError: false,
   message: '',
 };
-
 //Get rick and morty characters, 20 per page
 export const getCharacters = createAsyncThunk(
   'rickAndMorty/getCharacters',
-  async (pageNumber, thunkAPI) => {
+  async (data, thunkAPI) => {
+    const { pageNumber, searchedName } = data;
     try {
-      return await characterService.getCharacters(pageNumber);
+      return await characterService.getCharacters(pageNumber, searchedName);
     } catch (error) {
       const message =
         (error.response &&
@@ -35,6 +36,19 @@ const characterSlice = createSlice({
   reducers: {
     reset: () => {
       initialState;
+    },
+    nextPage: (state) => {
+      state.pageNumber += 1;
+    },
+    prevPage: (state) => {
+      if (state.pageNumber > 1) {
+        state.pageNumber -= 1;
+      }
+    },
+    setSearchedName: (state, action) => {
+      state.searchedName = action.payload;
+      console.log('action payload:', action.payload);
+      console.log('state:', state.searchedName);
     },
   },
   extraReducers: (builder) => {
@@ -60,4 +74,5 @@ const characterSlice = createSlice({
 });
 
 export default characterSlice.reducer;
-export const { reset } = characterSlice.actions;
+export const { reset, prevPage, nextPage, setSearchedName } =
+  characterSlice.actions;
