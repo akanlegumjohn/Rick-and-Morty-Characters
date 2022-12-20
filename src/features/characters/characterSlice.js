@@ -4,7 +4,7 @@ import characterService from './characterService';
 
 const initialState = {
   pageNumber: 1,
-  characters: {},
+  charactersDetails: {},
   isLoading: false,
   isSuccess: false,
   isError: false,
@@ -30,7 +30,7 @@ export const getCharacters = createAsyncThunk(
 );
 
 const characterSlice = createSlice({
-  name: 'character',
+  name: 'characters',
   initialState,
   reducers: {
     reset: () => {
@@ -48,7 +48,7 @@ const characterSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.isError = false;
-        state.characters = action.payload;
+        state.charactersDetails = action.payload;
       })
       //Runs when the data fetching is rejected
       .addCase(getCharacters.rejected, (state, action) => {

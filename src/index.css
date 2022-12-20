@@ -1,70 +1,82 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --background_color: rgba(24, 115, 231, 0.1);
+  --white_color: #ffffff;
+  --dark_gray_color: #3d535f;
+  --violet_color: #7f00ff;
+  --inactive_color: #b3ddff;
+  --active_color: #41a9ff;
+  /* --title_color: #1873e7; */
+  --black_color: #000;
+  --light_blue_color: #0c47cb;
+  /* --avatar_color_1: #ffd37e; */
+  --post_color: #232a30;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background: var(--background_color);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.main {
+  display: grid;
+  grid-template-columns: 25% auto;
+  gap: 20px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.filter--section {
+  background-color: var(--white_color);
+}
+.cards--container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+.character {
+  background-color: var(--white_color);
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  border: var(--light_blue_color) solid 3px;
+  border-radius: 10px;
+  position: relative;
+}
+.name {
+  font-family: 'Redressed';
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 1.5rem;
+  padding: 10px;
+}
+.status {
+  top: 15px;
+  right: 20px;
+  color: var(--white_color);
+  font-size: 30px;
+  font-weight: 900;
+  font-family: 'roboto';
+  width: 140px;
+  height: 50px;
+  text-align: center;
+  padding: 0px 20px;
+  position: absolute;
+  border-radius: 10px;
+}
+.image--container img {
+  width: 100%;
+}
+.gender {
+  font-size: 30px;
+  color: var(--dark_gray_color);
+  padding: 10px;
+  font-family: 'Roboto';
 }
