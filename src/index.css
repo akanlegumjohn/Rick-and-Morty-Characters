@@ -29,6 +29,7 @@ body {
   width: 100vw;
   background: var(--background_color);
 }
+/* === HEADER === */
 header {
   position: relative;
 }
@@ -37,9 +38,10 @@ header img {
   height: 900px;
   padding: 20px;
 }
+/* === SEARCH === */
 .search {
   position: absolute;
-  top: 760px;
+  top: 720px;
   left: 20%;
   display: flex;
   justify-content: center;
@@ -70,22 +72,25 @@ header img {
 .search--btn:hover {
   background-color: var(--light_pink_color);
 }
+/* ===MAIN=== */
 .main {
   display: grid;
   grid-template-columns: 25% auto;
   gap: 20px;
 }
 
+/* === FILTER SECTION === */
 .filter--section {
   background-color: var(--white_color);
   display: flex;
   flex-direction: column;
   gap: 100px;
   padding-left: 50px;
-  font-size: 40px;
+  font-size: 50px;
 }
 .filter--section div {
   line-height: 5rem;
+  cursor: pointer;
 }
 .filter--section h2 {
   font-size: 60px;
@@ -99,6 +104,7 @@ header img {
   padding: 10px;
   font-weight: 600;
 }
+/* === CHARACTERS CARDS=== */
 .cards--container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -163,7 +169,7 @@ label {
 .image--container img {
   width: 100%;
 }
-
+/*===  PAGINATION === */
 .pagination {
   display: flex;
   align-items: center;
@@ -187,4 +193,174 @@ label {
 }
 .active {
   color: white !important;
+}
+
+/* === MEDIA QUERY FOR VARIOUS SCREENS === */
+@media screen and (max-width: 1600px) {
+  .search {
+    left: 10%;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .filter--section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: transparent;
+    gap: 30px;
+    font-size: 50px;
+  }
+  .filter--section div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    border: 2px solid var(--active_color);
+    background-color: var(--white_color);
+    padding: 40px;
+  }
+  .filter--section h2 {
+    font-size: 60px;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: -10px;
+    text-align: center;
+  }
+  .cards--container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    cursor: pointer;
+  }
+  .character {
+    display: flex;
+    margin: 0px 30px;
+  }
+  .image--container img {
+    height: 100%;
+  }
+  .status {
+    top: 89%;
+    right: 67%;
+    font-size: 30px;
+    width: 475px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .search {
+    top: 400px;
+    left: 40%;
+    width: 20%;
+  }
+  .search input {
+    height: 50px;
+    width: 200px;
+
+    font-size: 20px;
+    padding: 10px;
+  }
+  .search--btn {
+    font-size: 13px;
+    height: 55px;
+    border-radius: 10px;
+  }
+  header img {
+    width: 100%;
+    height: 500px;
+  }
+  .filter--section {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    gap: 30px;
+    font-size: 30px;
+    width: 100%;
+    margin-left: -25px;
+  }
+  .filter--section div {
+    border-radius: 10px;
+  }
+  .filter--section h2 {
+    font-size: 30px;
+  }
+  .cards--container {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .character {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 30px;
+  }
+  .status {
+    top: 43%;
+    right: 0%;
+    font-size: 30px;
+    font-weight: 900;
+    width: 100%;
+    height: 50px;
+    /* padding: 0px 20px; */
+  }
+  .gender {
+    margin-top: 50px;
+    font-size: 20px;
+  }
+  .name {
+    margin-top: -40px;
+    font-size: 40px;
+    font-weight: 600;
+  }
+  label {
+    font-size: 20px;
+    padding: 5px;
+    /* margin-bottom: -15px; */
+    font-weight: 100;
+  }
+  .location,
+  .origin {
+    font-weight: 200;
+    font-size: 25px;
+    line-height: 2=1.5rem;
+    padding: 5px;
+  }
+  .pagination {
+    gap: 5px;
+    font-size: 10px;
+    padding: 40px;
+  }
+  .page-link {
+    font-size: 10px;
+    padding: 10px;
+    font-weight: 600;
+    margin: 10px;
+    border-radius: 5px;
+  }
+}
+@media screen and (max-width: 820px) {
+  .status {
+    top: 64%;
+  }
+}
+@media screen and (max-width: 912px) {
+  .status {
+    top: 66%;
+  }
+}
+@media screen and (max-width: 540px) {
+  .status {
+    top: 55%;
+  }
+}
+@media screen and (max-width: 412px) {
+  .status {
+    top: 49%;
+  }
+}
+@media screen and (max-width: 280px) {
+  .status {
+    top: 30%;
+  }
 }

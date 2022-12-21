@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+// import { GiDeathSkull } from 'react-icons/gi';
 
 const Cards = () => {
   const { charactersDetails } = useSelector((state) => state.characters);
@@ -23,23 +24,25 @@ const Cards = () => {
           {character.status === 'Dead' && (
             <p className="status" style={{ backgroundColor: 'red' }}>
               {character.status}
+              {/* <GiDeathSkull /> */}
             </p>
           )}
 
           <img src={character.image} alt={character.name} />
         </div>
 
-        <p className="gender">
-          {character.gender} - {character.species}
-        </p>
-        <p className="name"> {character.name}</p>
-        <label htmlFor="loc">Last known location:</label>
-        <p className="location" id="loc">
-          {' '}
-          {character.location.name}
-        </p>
-        <label htmlFor="orig">First seen in:</label>
-        <p className="origin"> {character.origin.name}</p>
+        <div>
+          <p className="gender">
+            {character.gender} - {character.species}
+          </p>
+          <p className="name"> {character.name}</p>
+          <label htmlFor="loc">Last known location:</label>
+          <p className="location" id="loc">
+            {character.location.name}
+          </p>
+          <label htmlFor="orig">First seen in:</label>
+          <p className="origin"> {character.origin.name}</p>
+        </div>
       </div>
     ));
   }
