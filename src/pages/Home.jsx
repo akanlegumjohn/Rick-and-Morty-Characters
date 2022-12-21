@@ -12,8 +12,18 @@ import {
   getAllGenderless,
   getAllUnknown,
 } from '../features/gender/genderSlice';
-
-reset;
+import {
+  getCronenberg,
+  getAlien,
+  getAnimal,
+  getDisease,
+  getHuman,
+  getHumanoid,
+  getMytholog,
+  getPoopybutthole,
+  getRobot,
+  getUnknown,
+} from '../features/species/speciesSlice';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -24,11 +34,23 @@ const Home = () => {
   useEffect(() => {
     dispatch(getCharacters({ pageNumber, searchedName }));
 
-    //Fetch genderData
+    //Fetch gender data
     dispatch(getAllMales());
     dispatch(getAllFemales());
     dispatch(getAllUnknown());
     dispatch(getAllGenderless());
+
+    //Fetch species data
+    dispatch(getAlien());
+    dispatch(getAnimal());
+    dispatch(getDisease());
+    dispatch(getUnknown());
+    dispatch(getCronenberg());
+    dispatch(getMytholog());
+    dispatch(getRobot());
+    dispatch(getHuman());
+    dispatch(getHumanoid());
+    dispatch(getPoopybutthole());
     if (isError) {
       console.log(message);
     }

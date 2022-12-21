@@ -4,10 +4,19 @@ const Filter = () => {
   const { males, females, unknown, genderLess } = useSelector(
     (state) => state.gender
   );
-  console.log('females', females);
-  console.log('males', males);
-  console.log('unknown', unknown);
-  console.log('genderLess', genderLess);
+  const {
+    alien,
+    human,
+    humanoid,
+    animal,
+    robot,
+    mytholog,
+    cronenberg,
+    poopybutthole,
+    disease,
+    unknownSpecie,
+  } = useSelector((state) => state.species);
+
   return (
     <section className="filter--section">
       <div>
@@ -29,6 +38,38 @@ const Filter = () => {
       </div>
       <div>
         <h2>SPECIES</h2>
+        <div>
+          <p>
+            Robot <span>{robot?.info?.count}</span>
+          </p>
+          <p>
+            Alien <span>{alien?.info?.count}</span>
+          </p>
+          <p>
+            animal <span>{animal?.info?.count}</span>
+          </p>
+          <p>
+            Disease <span>{disease?.info?.count}</span>
+          </p>
+          <p>
+            Human <span>{human?.info?.count}</span>
+          </p>
+          <p>
+            Mytholog <span>{mytholog?.info?.count}</span>
+          </p>
+          <p>
+            Unknown <span>{unknown?.info?.count}</span>
+          </p>
+          <p>
+            Humanoid <span>{humanoid?.info?.count}</span>
+          </p>
+          <p>
+            Cronenberg <span>{cronenberg?.info?.count}</span>
+          </p>
+          <p>
+            Poopybutthole <span>{poopybutthole?.info?.count}</span>
+          </p>
+        </div>
       </div>
       <div>
         <h2>LOCATION</h2>

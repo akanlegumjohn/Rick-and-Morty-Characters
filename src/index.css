@@ -91,7 +91,9 @@ header img {
 }
 .filter--section span {
   padding: 5px;
-  background-color: var(--light_gray_color);
+  background-color: var(--background_color);
+  color: var(--post_color);
+  padding: 10px;
 }
 .cards--container {
   display: grid;
