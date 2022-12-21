@@ -6,6 +6,13 @@ import Filter from '../components/Filter';
 import Pagination from '../components/Pagination';
 import Searchbar from '../components/Searchbar';
 import { getCharacters, reset } from '../features/characters/characterSlice';
+import {
+  getAllMales,
+  getAllFemales,
+  getAllGenderless,
+  getAllUnknown,
+} from '../features/gender/genderSlice';
+
 reset;
 
 const Home = () => {
@@ -13,9 +20,15 @@ const Home = () => {
   const { pageNumber, searchedName, isError, isSucces, message } = useSelector(
     (state) => state.characters
   );
+
   useEffect(() => {
     dispatch(getCharacters({ pageNumber, searchedName }));
 
+    //Fetch genderData
+    dispatch(getAllMales());
+    dispatch(getAllFemales());
+    dispatch(getAllUnknown());
+    dispatch(getAllGenderless());
     if (isError) {
       console.log(message);
     }
