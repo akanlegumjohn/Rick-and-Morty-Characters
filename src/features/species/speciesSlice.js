@@ -134,7 +134,6 @@ const speciesSlice = createSlice({
         state.humanoid = action.payload;
       })
       .addCase(getAlien.fulfilled, (state, action) => {
-        console.log('alien payload', action.payload);
         state.alien = action.payload;
       })
       .addCase(getAnimal.fulfilled, (state, action) => {

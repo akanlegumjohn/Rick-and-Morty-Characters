@@ -20,7 +20,7 @@ const Filter = () => {
   return (
     <section className="filter--section">
       <div>
-        <h2>Gender</h2>
+        <h2>GENDER</h2>
         <div>
           <p>
             Male <span>{males?.info?.count}</span>
@@ -70,9 +70,6 @@ const Filter = () => {
             Poopybutthole <span>{poopybutthole?.info?.count}</span>
           </p>
         </div>
-      </div>
-      <div>
-        <h2>LOCATION</h2>
       </div>
     </section>
   );

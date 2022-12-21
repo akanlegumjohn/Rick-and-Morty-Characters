@@ -8,9 +8,10 @@
   --pale_blue_color: #dab7da;
   --black_color: #000;
   --light_blue_color: #0c47cb;
-  --btn_color: #df9707;
   --post_color: #98a2ab;
   --light_gray_color: #f4efef94;
+  --background-color2: #e2a400;
+  --refinement-background-color: rgba(65, 66, 71, 0.08);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
@@ -84,16 +85,19 @@ header img {
   font-size: 40px;
 }
 .filter--section div {
-  line-height: 4rem;
+  line-height: 5rem;
 }
 .filter--section h2 {
   font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 30px;
 }
 .filter--section span {
   padding: 5px;
-  background-color: var(--background_color);
-  color: var(--post_color);
+  background-color: var(--refinement-background-color);
+  color: var(--dark_gray_color);
   padding: 10px;
+  font-weight: 600;
 }
 .cards--container {
   display: grid;
@@ -114,7 +118,7 @@ header img {
   font-size: 30px;
   font-weight: 900;
   font-family: 'roboto';
-  width: 140px;
+  width: 160px;
   height: 50px;
   text-align: center;
   padding: 0px 20px;
@@ -153,14 +157,14 @@ label {
 .name:hover,
 .location:hover,
 .origin:hover {
-  color: var(--btn_color);
+  color: var(--background-color2);
 }
 
 .image--container img {
   width: 100%;
 }
 
-.pagination--container {
+.pagination {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -168,7 +172,19 @@ label {
   margin: 50px 0px;
   font-size: 80px;
 }
-.btn {
-  color: var(--white_color);
-  font-size: 60px;
+.page-link {
+  background-color: var(--refinement-background-color);
+  color: var(--black_color);
+  font-size: 40px;
+  padding: 30px;
+  font-weight: 600;
+  margin: 20px;
+  border-radius: 10px;
+}
+.page-link:hover {
+  background-color: transparent;
+  color: var(--dark_gray_color);
+}
+.active {
+  color: white !important;
 }

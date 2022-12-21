@@ -45,6 +45,9 @@ const characterSlice = createSlice({
         state.pageNumber -= 1;
       }
     },
+    setPageNumber: (state, action) => {
+      state.pageNumber = action.payload;
+    },
     setSearchedName: (state, action) => {
       state.searchedName = action.payload;
       console.log('action payload:', action.payload);
@@ -74,5 +77,5 @@ const characterSlice = createSlice({
 });
 
 export default characterSlice.reducer;
-export const { reset, prevPage, nextPage, setSearchedName } =
+export const { reset, prevPage, nextPage, setSearchedName, setPageNumber } =
   characterSlice.actions;

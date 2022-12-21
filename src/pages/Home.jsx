@@ -27,9 +27,8 @@ import {
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { pageNumber, searchedName, isError, isSucces, message } = useSelector(
-    (state) => state.characters
-  );
+  const { pageNumber, searchedName, isError, isSucces, message, isLoading } =
+    useSelector((state) => state.characters);
 
   useEffect(() => {
     dispatch(getCharacters({ pageNumber, searchedName }));
@@ -56,6 +55,7 @@ const Home = () => {
     }
     return () => dispatch(reset());
   }, [isSucces, isError, message, pageNumber, dispatch, searchedName]);
+
   return (
     <>
       <Searchbar />

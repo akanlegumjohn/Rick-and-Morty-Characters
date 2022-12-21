@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 const Cards = () => {
   const { charactersDetails } = useSelector((state) => state.characters);
 
-  console.log(charactersDetails.results);
+  //Must fixed, this logic is not working
   if (charactersDetails === undefined) {
     return <div>NO results found</div>;
   } else {
@@ -28,9 +28,18 @@ const Cards = () => {
 
           <img src={character.image} alt={character.name} />
         </div>
-        <p className="gender">{character.gender}</p>
+
+        <p className="gender">
+          {character.gender} - {character.species}
+        </p>
         <p className="name"> {character.name}</p>
-        <p className="location"> {character.location.name}</p>
+        <label htmlFor="loc">Last known location:</label>
+        <p className="location" id="loc">
+          {' '}
+          {character.location.name}
+        </p>
+        <label htmlFor="orig">First seen in:</label>
+        <p className="origin"> {character.origin.name}</p>
       </div>
     ));
   }
