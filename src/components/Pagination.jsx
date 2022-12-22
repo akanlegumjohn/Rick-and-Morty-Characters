@@ -12,7 +12,7 @@ const Pagination = () => {
 
   return (
     <RectPaginate
-      pageCount={Math.ceil(charactersDetails.info?.pages)}
+      pageCount={charactersDetails.info?.pages}
       className="pagination"
       pageLinkClassName="page-link "
       nextLabel={<GrLinkNext />}

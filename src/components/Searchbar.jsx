@@ -15,10 +15,8 @@ const Searchbar = () => {
         placeholder="Search for characters..."
       />
       <button className=" search--btn" onClick={(e) => e.preventDefault()}>
-        <span>
-          <BsSearch />
-        </span>
-        Search
+        <BsSearch />
+        <span>Search</span>
       </button>
     </form>
   );
