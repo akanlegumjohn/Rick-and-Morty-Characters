@@ -50,8 +50,6 @@ const characterSlice = createSlice({
     },
     setSearchedName: (state, action) => {
       state.searchedName = action.payload;
-      console.log('action payload:', action.payload);
-      console.log('state:', state.searchedName);
     },
   },
   extraReducers: (builder) => {
@@ -71,6 +69,7 @@ const characterSlice = createSlice({
       .addCase(getCharacters.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
+        state.isSuccess = false;
         state.message = action.payload;
       });
   },

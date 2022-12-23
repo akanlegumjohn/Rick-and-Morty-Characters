@@ -2,11 +2,19 @@ import { useSelector } from 'react-redux';
 // import { GiDeathSkull } from 'react-icons/gi';
 
 const Cards = () => {
-  const { charactersDetails } = useSelector((state) => state.characters);
+  const { charactersDetails, isError, searchedName } = useSelector(
+    (state) => state.characters
+  );
 
   //Must fixed, this logic is not working
-  if (charactersDetails === undefined) {
-    return <div>NO results found</div>;
+  if (isError) {
+    return (
+      <div className="no--results-container">
+        <h1>No results for : "{searchedName}"</h1>
+        <p>Try searching for something else </p>
+        <h2>NO CHARACTER FOUND</h2>
+      </div>
+    );
   } else {
     return charactersDetails?.results?.map((character) => (
       <div className="character" key={character.id}>

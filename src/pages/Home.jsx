@@ -5,7 +5,11 @@ import Cards from '../components/Cards';
 import Filter from '../components/Filter';
 import Pagination from '../components/Pagination';
 import Searchbar from '../components/Searchbar';
-import { getCharacters, reset } from '../features/characters/characterSlice';
+import {
+  getCharacters,
+  reset,
+  setSearchedName,
+} from '../features/characters/characterSlice';
 import {
   getAllMales,
   getAllFemales,
@@ -53,6 +57,7 @@ const Home = () => {
     if (isError) {
       console.log(message);
     }
+
     return () => dispatch(reset());
   }, [isSucces, isError, message, pageNumber, dispatch, searchedName]);
 
@@ -65,7 +70,7 @@ const Home = () => {
           <Cards />
         </section>
       </main>
-      <Pagination />
+      {!isError && <Pagination />}
     </>
   );
 };
