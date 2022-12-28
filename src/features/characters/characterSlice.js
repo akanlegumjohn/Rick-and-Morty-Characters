@@ -5,6 +5,7 @@ import characterService from './characterService';
 const initialState = {
   pageNumber: 1,
   searchedName: ''.toLowerCase(),
+  filterdata: { status: '', gender: '', species: '' },
   charactersDetails: {},
   isLoading: false,
   isSuccess: false,
@@ -15,9 +16,17 @@ const initialState = {
 export const getCharacters = createAsyncThunk(
   'rickAndMorty/getCharacters',
   async (data, thunkAPI) => {
-    const { pageNumber, searchedName } = data;
+    const { pageNumber, searchedName, filterdata } = data;
+
+    const { species, gender, status } = filterdata;
     try {
-      return await characterService.getCharacters(pageNumber, searchedName);
+      return await characterService.getCharacters(
+        pageNumber,
+        searchedName,
+        species,
+        gender,
+        status
+      );
     } catch (error) {
       const message =
         (error.response &&
@@ -51,6 +60,9 @@ const characterSlice = createSlice({
     setSearchedName: (state, action) => {
       state.searchedName = action.payload;
     },
+    handleFilter: (state, action) => {
+      state.filterdata = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -76,5 +88,11 @@ const characterSlice = createSlice({
 });
 
 export default characterSlice.reducer;
-export const { reset, prevPage, nextPage, setSearchedName, setPageNumber } =
-  characterSlice.actions;
+export const {
+  reset,
+  prevPage,
+  nextPage,
+  setSearchedName,
+  setPageNumber,
+  handleFilter,
+} = characterSlice.actions;

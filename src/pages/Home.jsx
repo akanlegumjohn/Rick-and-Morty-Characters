@@ -1,8 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { AiOutlineFilter } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Cards from '../components/Cards';
 import Filter from '../components/Filter';
+import FilterIcon from '../components/FilterIcon';
 import Pagination from '../components/Pagination';
 import Searchbar from '../components/Searchbar';
 import {
@@ -28,14 +30,27 @@ import {
   getRobot,
   getUnknown,
 } from '../features/species/speciesSlice';
+import {
+  getAlive,
+  getDead,
+  getUnknownStatus,
+} from '../features/status/statusSlice';
 
 const Home = () => {
+  const [showFilter, setShowFilter] = useState(false);
   const dispatch = useDispatch();
-  const { pageNumber, searchedName, isError, isSucces, message, isLoading } =
-    useSelector((state) => state.characters);
+  const {
+    pageNumber,
+    searchedName,
+    status,
+    isError,
+    isSucces,
+    message,
+    filterdata,
+  } = useSelector((state) => state.characters);
 
   useEffect(() => {
-    dispatch(getCharacters({ pageNumber, searchedName }));
+    dispatch(getCharacters({ pageNumber, searchedName, status, filterdata }));
 
     //Fetch gender data
     dispatch(getAllMales());
@@ -54,18 +69,45 @@ const Home = () => {
     dispatch(getHuman());
     dispatch(getHumanoid());
     dispatch(getPoopybutthole());
+
+    //Fetch status data
+    dispatch(getAlive());
+    dispatch(getDead());
+    dispatch(getUnknownStatus());
     if (isError) {
       console.log(message);
     }
 
-    return () => dispatch(reset());
-  }, [isSucces, isError, message, pageNumber, dispatch, searchedName]);
+    return () => {
+      dispatch(reset());
+    };
+  }, [
+    isSucces,
+    isError,
+    message,
+    pageNumber,
+    dispatch,
+    searchedName,
+    filterdata,
+  ]);
 
   return (
     <>
+      {showFilter && <FilterIcon />}
       <Searchbar />
       <main className="main">
-        <Filter />
+        {window.innerWidth < 1280 ? (
+          <div
+            className="filter--icon--container"
+            onClick={() => {
+              setShowFilter((prevState) => !prevState);
+            }}
+          >
+            <span>Filter</span> <AiOutlineFilter />
+          </div>
+        ) : (
+          <Filter />
+        )}
         <section className="cards--container">
           <Cards />
         </section>

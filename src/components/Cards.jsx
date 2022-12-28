@@ -10,7 +10,7 @@ const Cards = () => {
   if (isError) {
     return (
       <div className="no--results-container">
-        <h1>No results for : "{searchedName}"</h1>
+        <h1>No results for this selection</h1>
         <p>Try searching for something else </p>
         <h2>NO CHARACTER FOUND</h2>
       </div>

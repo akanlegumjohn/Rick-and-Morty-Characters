@@ -1,72 +1,22 @@
-import { useSelector } from 'react-redux';
+import Gender from './FilterLists/Gender';
+import Species from './FilterLists/Species';
+import Status from './FilterLists/Status';
 
 const Filter = () => {
-  const { males, females, unknown, genderLess } = useSelector(
-    (state) => state.gender
-  );
-  const {
-    alien,
-    human,
-    humanoid,
-    animal,
-    robot,
-    mytholog,
-    cronenberg,
-    poopybutthole,
-    disease,
-    unknownSpecie,
-  } = useSelector((state) => state.species);
-
   return (
     <section className="filter--section">
       <div>
+        <h2>STATUS</h2>
+        <Status />
+      </div>
+      <div>
         <h2>GENDER</h2>
-        <p>
-          Male <span>{males?.info?.count}</span>
-        </p>
-        <p>
-          Female <span>{females?.info?.count}</span>
-        </p>
-        <p>
-          Unknown <span>{unknown?.info?.count}</span>
-        </p>
-        <p>
-          GenderLess <span>{genderLess?.info?.count}</span>
-        </p>
+        <Gender />
       </div>
 
       <div>
         <h2>SPECIES</h2>
-        <p>
-          Robot <span>{robot?.info?.count}</span>
-        </p>
-        <p>
-          Alien <span>{alien?.info?.count}</span>
-        </p>
-        <p>
-          animal <span>{animal?.info?.count}</span>
-        </p>
-        <p>
-          Disease <span>{disease?.info?.count}</span>
-        </p>
-        <p>
-          Human <span>{human?.info?.count}</span>
-        </p>
-        <p>
-          Mytholog <span>{mytholog?.info?.count}</span>
-        </p>
-        <p>
-          Unknown <span>{unknown?.info?.count}</span>
-        </p>
-        <p>
-          Humanoid <span>{humanoid?.info?.count}</span>
-        </p>
-        <p>
-          Cronenberg <span>{cronenberg?.info?.count}</span>
-        </p>
-        <p>
-          Poopybutthole <span>{poopybutthole?.info?.count}</span>
-        </p>
+        <Species />
       </div>
     </section>
   );
