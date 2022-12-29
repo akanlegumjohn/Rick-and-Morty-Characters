@@ -46,6 +46,15 @@ const characterSlice = createSlice({
     reset: () => {
       initialState;
     },
+    resetFilters: (state) => {
+      state.filterdata = {
+        status: '',
+        gender: '',
+        species: '',
+      };
+      //Refresh the page in order to unchecked any radio button checked
+      window.location.reload(false);
+    },
     nextPage: (state) => {
       state.pageNumber += 1;
     },
@@ -95,4 +104,5 @@ export const {
   setSearchedName,
   setPageNumber,
   handleFilter,
+  resetFilters,
 } = characterSlice.actions;
