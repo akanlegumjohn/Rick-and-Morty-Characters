@@ -89,6 +89,7 @@ const Home = () => {
     dispatch,
     searchedName,
     filterdata,
+    // reset,
   ]);
 
   return (
@@ -106,7 +107,9 @@ const Home = () => {
             <span>Filter</span> <AiOutlineFilter />
           </div>
         ) : (
-          <Filter />
+          <>
+            <Filter />
+          </>
         )}
         <section className="cards--container">
           <Cards />

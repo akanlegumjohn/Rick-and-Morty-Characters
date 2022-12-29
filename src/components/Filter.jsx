@@ -5,16 +5,18 @@ import Status from './FilterLists/Status';
 const Filter = () => {
   return (
     <section className="filter--section">
-      <div>
+      <div className="reset--filter">Reset Filter</div>
+
+      <div className="filter--list">
         <h2>STATUS</h2>
         <Status />
       </div>
-      <div>
+      <div className="filter--list">
         <h2>GENDER</h2>
         <Gender />
       </div>
 
-      <div>
+      <div className="filter--list">
         <h2>SPECIES</h2>
         <Species />
       </div>

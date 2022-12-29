@@ -16,22 +16,24 @@ const FilterItem = ({ name, item, index }) => {
     );
   };
   return (
-    <>
-      <input
-        className="filter--input"
-        type="radio"
-        name={name}
-        id={name + index}
-        onChange={handleClick}
-        value={item.name}
-      />
+    <div className="filter--item--container">
+      <div className="filter--input--container ">
+        <input
+          type="radio"
+          name={name}
+          id={name + index}
+          onChange={handleClick}
+          value={item.name}
+        />
+      </div>
+      <div className="filter--label--container">
+        <label htmlFor={name + index}>
+          {item.name}
 
-      <label htmlFor={name + index} className="filter--label">
-        {item.name}
-
-        <span>{item.count}</span>
-      </label>
-    </>
+          <span>{item.count}</span>
+        </label>
+      </div>
+    </div>
   );
 };
 
