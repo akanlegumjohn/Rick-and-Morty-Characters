@@ -13,12 +13,7 @@ const Navbar = () => {
     <nav className={isOpen ? '' : 'hidden'}>
       <button>
         {isOpen ? (
-          <FaTimes
-            onClick={toggleNav}
-            style={{
-              margin: '70px 0px 0px 900px',
-            }}
-          />
+          <FaTimes onClick={toggleNav} className="fa--times" />
         ) : (
           <FaBars onClick={toggleNav} />
         )}
