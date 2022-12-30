@@ -26,44 +26,82 @@ body {
   background: var(--background_color);
 }
 
-/* NO RESULT FOUND */
-.no--results-container {
-  gap: 50px;
+/* === Navigation bar === */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
   display: flex;
-  padding-left: 70px;
-  align-items: center;
   flex-direction: column;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.no--results-container p {
-  font-size: 50px;
-  font-weight: 500;
-}
-.no--results-container h1 {
-  font-size: 60px;
-  font-weight: 600;
-}
-.no--results-container h2 {
-  font-size: 70px;
-  font-weight: 700;
-  color: var(--active_color);
+  z-index: 10;
+  transition: all 0.3s;
 }
 
-/* === FILTER ICON === */
-.filter--icon--container {
-  left: 30%;
-  z-index: 3;
-  width: 200px;
-  bottom: 30px;
-  padding: 10px;
-  font-size: 30px;
-  cursor: pointer;
-  position: fixed;
-  font-weight: 600;
-  text-align: center;
-  border-radius: 10px;
+button {
+  border: none;
   color: var(--white_color);
-  background-color: var(--active_color);
+  font-size: 100px;
+  cursor: pointer;
+  margin: 0 0 100px 0;
+  background-color: var(--dark_gray_color);
+  height: 10px;
+  width: auto;
+}
+
+ul {
+  list-style: none;
+  margin: -170px 0px 0px 0px;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 200px;
+  width: 60%;
+  overflow: hidden;
+  transition: all 0.3s;
+  background-color: var(--dark_gray_color);
+}
+ul span {
+  margin-left: 80px;
+}
+
+.open {
+  width: 400%;
+  height: auto;
+  overflow: visible;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 100px;
+  display: flex;
+  align-items: center;
+}
+
+svg {
+  margin-right: 10px;
+  animation: breath 2s ease-in-out infinite;
+}
+
+@keyframes breath {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.active {
+  font-weight: bold;
 }
 
 /*=== FILTER MODAL STYLES === */
@@ -235,7 +273,7 @@ header img {
   font-size: 60px;
   line-height: 3.5rem;
 }
-.character--details labels {
+.character--details label {
   color: var(--dark_gray_color);
   font-size: 40px;
   margin-bottom: -15px;

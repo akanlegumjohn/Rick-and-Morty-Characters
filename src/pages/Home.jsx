@@ -35,6 +35,7 @@ import {
   getDead,
   getUnknownStatus,
 } from '../features/status/statusSlice';
+import Header from '../components/Header';
 
 const Home = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -96,6 +97,7 @@ const Home = () => {
     <>
       {showFilter && <FilterIcon />}
       <Searchbar />
+      <Header />
       <main className="main">
         {window.innerWidth < 1280 ? (
           <div
