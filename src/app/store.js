@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import characterReducer from '../features/characters/characterSlice';
+
+import statusReducer from '../features/status/statusSlice';
 import genderReducer from '../features/gender/genderSlice';
 import speciesReducer from '../features/species/speciesSlice';
-import statusReducer from '../features/status/statusSlice';
+import episodeReducer from '../features/episode/episodeSlice';
+import locationReducer from '../features/Location/locationSlice';
+import characterReducer from '../features/characters/characterSlice';
 
 export const store = configureStore({
   reducer: {
@@ -10,5 +13,7 @@ export const store = configureStore({
     gender: genderReducer,
     species: speciesReducer,
     status: statusReducer,
+    locations: locationReducer,
+    episodes: episodeReducer,
   },
 });

@@ -99,7 +99,7 @@ const Home = () => {
       <Searchbar />
       <Header />
       <main className="main">
-        {window.innerWidth < 1280 ? (
+        {window.innerWidth < 1024 ? (
           <div
             className="filter--icon--container"
             onClick={() => {

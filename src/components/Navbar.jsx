@@ -38,6 +38,12 @@ const Navbar = () => {
                 <span> Episodes</span>
               </NavLink>
             </li>
+            <li>
+              <NavLink to="/quiz" activeclassname="active">
+                <FaTv />
+                <span> Quiz</span>
+              </NavLink>
+            </li>
           </ul>
           <div className="typing">Rick and Morty Characters</div>
         </>
