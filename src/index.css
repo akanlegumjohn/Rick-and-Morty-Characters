@@ -50,7 +50,7 @@ body {
 }
 /*=== FILTER ICON STYLES ===*/
 .filter--icon--container {
-  left: 30%;
+  left: 50%;
   z-index: 3;
   width: 200px;
   bottom: 30px;
@@ -637,7 +637,6 @@ header img {
   }
   .filter--icon--container {
     bottom: 70px;
-    left: 25%;
   }
   .no--results-container h1,
   .no--results-container p,
@@ -766,8 +765,8 @@ header img {
   }
 
   .filter--icon--container {
-    left: 40px;
-    height: 60px;
+    height: 50px;
+    width: 50%;
   }
   .reset--filter {
     font-size: 20px;
@@ -811,20 +810,27 @@ header img {
   }
   .name {
     font-size: 17px;
-    line-height: 2rem;
+    line-height: 3rem;
     padding-bottom: 0px;
     margin-bottom: 0px;
   }
 
   label {
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.5rem;
   }
   .location,
   .origin {
-    font-size: 18px;
+    font-size: 15px;
+    line-height: 1.5rem;
   }
-
+  .name,
+  .gender,
+  .status,
+  .location,
+  .origin {
+    padding: 0px;
+  }
   .pagination {
     gap: 0.3rem;
     margin: 10px 20px 600px 20px;
