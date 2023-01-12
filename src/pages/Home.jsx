@@ -38,6 +38,20 @@ import {
 import Header from '../components/Header';
 
 const Home = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    function handleScroll() {
+      setScrollY(window.scrollY);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const [showFilter, setShowFilter] = useState(false);
   const dispatch = useDispatch();
   const {
@@ -104,6 +118,9 @@ const Home = () => {
             className="filter--icon--container"
             onClick={() => {
               setShowFilter((prevState) => !prevState);
+            }}
+            style={{
+              display: scrollY > 11000 ? 'none' : 'block',
             }}
           >
             <span>Filter</span> <AiOutlineFilter />
