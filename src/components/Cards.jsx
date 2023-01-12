@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 // import { GiDeathSkull } from 'react-icons/gi';
 
 const Cards = () => {
@@ -18,38 +19,40 @@ const Cards = () => {
   } else {
     return charactersDetails?.results?.map((character) => (
       <div className="character" key={character.id}>
-        <div className="image--container">
-          <img src={character.image} alt={character.name} />
-        </div>
-        {character.status === 'Alive' && (
-          <p className="status" style={{ backgroundColor: 'green' }}>
-            {character.status}
-          </p>
-        )}
-        {character.status === 'unknown' && (
-          <p className="status" style={{ backgroundColor: 'black' }}>
-            {character.status}
-          </p>
-        )}
-        {character.status === 'Dead' && (
-          <p className="status" style={{ backgroundColor: 'red' }}>
-            {character.status}
-            {/* <GiDeathSkull /> */}
-          </p>
-        )}
+        <Link to={`/${character.id}`} className="character--link">
+          <div className="image--container">
+            <img src={character.image} alt={character.name} />
+          </div>
+          {character.status === 'Alive' && (
+            <p className="status" style={{ backgroundColor: 'green' }}>
+              {character.status}
+            </p>
+          )}
+          {character.status === 'unknown' && (
+            <p className="status" style={{ backgroundColor: 'black' }}>
+              {character.status}
+            </p>
+          )}
+          {character.status === 'Dead' && (
+            <p className="status" style={{ backgroundColor: 'red' }}>
+              {character.status}
+              {/* <GiDeathSkull /> */}
+            </p>
+          )}
 
-        <div className="  character--details">
-          <p className="gender">
-            {character.gender} - <span>{character.species}</span>
-          </p>
-          <p className="name"> {character.name}</p>
-          <label htmlFor="loc">Last known location:</label>
-          <p className="location" id="loc">
-            {character.location.name}
-          </p>
-          <label htmlFor="orig">First seen in:</label>
-          <p className="origin"> {character.origin.name}</p>
-        </div>
+          <div className="  character--details">
+            <p className="gender">
+              {character.gender} - <span>{character.species}</span>
+            </p>
+            <p className="name"> {character.name}</p>
+            <label htmlFor="loc">Last known location:</label>
+            <p className="location" id="loc">
+              {character.location.name}
+            </p>
+            <label htmlFor="orig">First seen in:</label>
+            <p className="origin"> {character.origin.name}</p>
+          </div>
+        </Link>
       </div>
     ));
   }

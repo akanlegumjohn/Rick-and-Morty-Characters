@@ -12,6 +12,7 @@
   --light_gray_color: #f4efef94;
   --background_color: rgba(24, 115, 231, 0.1);
   --refinement-background-color: rgba(65, 66, 71, 0.08);
+  --clr: #41a9ff;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -78,7 +79,7 @@ nav {
   transition: all 0.3s;
 }
 
-button {
+nav button {
   border: none;
   color: var(--white_color);
   font-size: 100px;
@@ -115,7 +116,7 @@ ul span {
   overflow: visible;
 }
 
-a {
+nav a {
   color: #fff;
   text-decoration: none;
   font-size: 100px;
@@ -123,7 +124,7 @@ a {
   align-items: center;
 }
 
-svg {
+nav svg {
   margin-right: 10px;
   animation: breath 2s ease-in-out infinite;
 }
@@ -183,7 +184,7 @@ header img {
   top: 450px;
   height: 120px;
   width: 50%;
-  padding: 10px;
+  padding: 30px;
   font-size: 50px;
   border-radius: 40px;
   color: var(--white_colori);
@@ -225,9 +226,11 @@ header img {
 
 .filter--section h2 {
   margin-top: 100px;
-  font-size: 80px;
+  font-size: 50px;
+  letter-spacing: 0.5rem;
   font-weight: 700;
   color: var(--white_color);
+  padding-left: 55px;
 }
 
 .filter--section span {
@@ -270,10 +273,117 @@ header img {
   background-color: var(--light_pink_color);
   color: var(--black_color);
 }
+/*===STYLES FOR THE PAGE WHICH CONTAINS THE DETAILED DESCRIPTION OF A CHARACTER ===*/
+.single--character--container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr;
+  gap: 30px;
+}
+.single--character--container .img--container {
+  margin: 30px 0px 0px 20px;
+}
+.single--character--container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.single--character--container p {
+  font-size: 80px;
+  margin: 30px 40px 0px 0px;
+  line-height: 10rem;
+}
+.single--character--container span {
+  text-transform: lowercase;
+  padding: 0px 5px;
+}
+.single--character--container .character--name {
+  text-transform: none;
+  font-weight: 700;
+  color: var(--light_blue_color);
+}
+.single--character--container .date {
+  text-transform: none;
+  font-family: cursive;
+  font-size: 70px;
+  font-weight: 600;
+}
+.single--character--container .char--name {
+  text-transform: none;
+}
+.single--character--container .char--location {
+  color: var(--dark_gray_color);
+  font-weight: 550;
+  font-family: monospace;
+}
+/* Back To Characters button */
+.single--character--container .back--link--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single--character--container .back--to--char--link:hover {
+  background: var(--light_blue_color);
+  box-shadow: 0 0 10px var(--light_blue_color), 0 0 30px var(--light_blue_color),
+    0 0 60px var(--light_blue_color), 0 0 100px var(--light_blue_color);
+}
+.single--character--container .back--to--char--link {
+  position: relative;
+  padding: 20px 60px;
+  overflow: hidden;
+  text-decoration: none;
+  margin: 80px 40px;
+}
+
+.single--character--container .back--to--char--link:hover {
+  background: var(--clr);
+  box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr), 0 0 60px var(--clr),
+    0 0 100px var(--clr);
+}
+
+.single--character--container .back--to--char--link::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 400%;
+  transition: 1s;
+}
+
+.single--character--container .back--to--char--link::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: var(--dark_gray_color);
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.single--character--container .back--to--char--link:hover::after {
+  background: var(--clr);
+}
+
+.single--character--container .back--to--char--link span {
+  position: relative;
+  z-index: 1;
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--white_color);
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  border-radius: 15px;
+}
+
+.single--character--container .back--to--char--link:hover span {
+  opacity: 2;
+}
 /* === CHARACTERS CARDS=== */
 .cards--container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
   gap: 30px;
   cursor: pointer;
 }
@@ -282,13 +392,22 @@ header img {
   background-color: var(--light_pink_color);
   border-radius: 10px;
   position: relative;
+
+  /* height: fit-content; */
+}
+.character--link {
+  color: var(--black_color);
+  text-decoration: none;
+}
+.character--link:hover {
+  color: #000;
 }
 .character--details {
   padding: 40px;
 }
 .status {
-  top: 0px;
-  right: 0px;
+  top: 2px;
+  right: 3px;
   color: var(--white_color);
   font-size: 40px;
   font-weight: 900;
@@ -405,9 +524,10 @@ header img {
   .search input {
     top: 220px;
     width: 50%;
-    height: 80px;
-    font-size: 30px;
-    border-radius: 40px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 20px;
+    padding-left: 15px;
   }
 
   .main {
@@ -506,6 +626,38 @@ header img {
   .page-link {
     padding: 15px;
   }
+
+  /* CHARACTER DESCRIPTION PAGE */
+  .single--character--container {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .single--character--container .img--container {
+    margin: 10px 0px 0px 20px;
+  }
+
+  .single--character--container img {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+  }
+
+  .single--character--container p {
+    font-size: 50px;
+    line-height: 5.5rem;
+    padding: 0px 30px 0px 40px;
+  }
+  .single--character--container .date {
+    font-size: 50px;
+    font-weight: 500;
+  }
+  .single--character--container .back--to--char--link span {
+    font-size: 40px;
+    font-weight: 500;
+    opacity: 0.8;
+  }
 }
 
 @media screen and (max-width: 912px) {
@@ -519,7 +671,7 @@ header img {
     margin-top: 250px;
   }
   .filter--icon--container {
-    bottom: 80px;
+    bottom: 150px;
     left: 35%;
   }
 
@@ -604,26 +756,34 @@ header img {
     margin: 10px;
     border-radius: 5px;
   }
+  .single--character--container .back--to--char--link span {
+    font-size: 30px;
+    font-weight: 500;
+    opacity: 2;
+  }
+  .single--character--container .back--to--char--link::after {
+    background-color: var(--clr);
+  }
 }
 
 @media screen and (max-width: 540px) {
   nav {
     width: 80px;
   }
-  ul span {
+  nav ul span {
     margin-left: 20px;
   }
   .fa--times {
     margin: 40px 0px 0px 250px;
   }
-  button {
+  nav button {
     font-size: 50px;
   }
 
-  ul {
+  nav ul {
     gap: 30px;
   }
-  a {
+  nav a {
     font-size: 30px;
     margin-left: -70px;
   }
@@ -635,9 +795,7 @@ header img {
     padding: 10px 40px 40px 40px;
     font-size: 20px;
   }
-  .filter--icon--container {
-    bottom: 70px;
-  }
+
   .no--results-container h1,
   .no--results-container p,
   .no--results-container h2 {
@@ -653,7 +811,7 @@ header img {
     left: 20%;
     top: 220px;
     height: 50px;
-    width: 50%;
+    width: 60%;
     padding: 10px;
     font-size: 15px;
     border-radius: 20px;
@@ -666,9 +824,8 @@ header img {
     gap: 10px;
   }
   .filter--icon--container {
-    left: 25%;
-    width: 200px;
-    bottom: 30px;
+    left: 30%;
+    width: 150px;
     padding: 10px;
     font-size: 20px;
 
@@ -751,12 +908,50 @@ header img {
     font-size: 10px;
     padding: 20px;
   }
+  .pagination .prev,
+  .pagination .next {
+    font-size: 30px;
+  }
+  .page-link {
+    font-size: 17px;
+  }
+  /* CHARACTER DESCRIPTION PAGE */
+  .single--character--container {
+    gap: 1px;
+  }
+  .single--character--container .img--container {
+    margin: 5px 0px 0px 10px;
+  }
+
+  .single--character--container img {
+    padding: 5px;
+  }
+
+  .single--character--container p {
+    font-size: 20px;
+    line-height: 2rem;
+    padding: 0px 30px 0px 40px;
+  }
+  .single--character--container .date {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .single--character--container .back--to--char--link {
+    padding: 0px 10px 15px 10px;
+    margin: 50px 0px;
+  }
+  .single--character--container .back--to--char--link span {
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 0.1rem;
+  }
 }
 @media screen and (max-width: 360px) {
   .modal--title {
     font-size: 25px;
   }
-  a {
+  nav a {
     font-size: 25px;
     margin-left: -80px;
   }
@@ -837,9 +1032,14 @@ header img {
     font-size: 10px;
   }
   .page-link {
-    font-size: 10px;
     font-weight: 400;
     margin: 5px;
     padding: 5px;
+  }
+  .single--character--container .back--to--char--link {
+    padding: 0px 5px 15px 5px;
+  }
+  .single--character--container .back--to--char--link span {
+    font-size: 10px;
   }
 }

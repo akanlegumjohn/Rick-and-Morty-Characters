@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Location from './pages/Location';
 import Episode from './pages/Episode';
 import Quiz from './pages/Quiz';
+import Character from './components/Character';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/locations" element={<Location />} />
         <Route path="/episodes" element={<Episode />} />
         <Route path="/quiz" element={<Quiz />} />
+        <Route path="/:characterId" element={<Character />} />
       </Routes>
     </BrowserRouter>
   );

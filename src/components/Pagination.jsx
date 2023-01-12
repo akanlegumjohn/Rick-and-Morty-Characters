@@ -15,8 +15,8 @@ const Pagination = () => {
       pageCount={charactersDetails.info?.pages}
       className="pagination"
       pageLinkClassName="page-link "
-      nextLabel={<GrLinkNext />}
-      previousLabel={<GrLinkPrevious />}
+      nextLabel={<GrLinkNext className="next" />}
+      previousLabel={<GrLinkPrevious className="prev" />}
       activeClassName="active"
       onPageChange={(data) => {
         let requiredPageNumber = data.selected + 1;
