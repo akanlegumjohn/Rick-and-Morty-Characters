@@ -294,6 +294,7 @@ header img {
   font-size: 80px;
   margin: 30px 40px 0px 0px;
   line-height: 10rem;
+  position: relative;
 }
 .single--character--container span {
   text-transform: lowercase;
