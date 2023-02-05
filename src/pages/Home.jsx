@@ -39,7 +39,17 @@ import Header from '../components/Header';
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
+  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  // useEffect(() => {
+  //   const handleWindowResize = () => {
+  //     setWindowWidth(window.innerWidth);
+  //   };
+  //   window.addEventListener('resize', handleWindowResize);
+  //   return () => {
+  //     window.removeEventListener('resize', handleWindowResize);
+  //   };
+  // }, []);
   useEffect(() => {
     function handleScroll() {
       setScrollY(window.scrollY);
@@ -112,6 +122,9 @@ const Home = () => {
       {showFilter && <FilterIcon />}
       <Searchbar />
       <Header />
+      {/* <span style={{ fontSize: '80px', marginLeft: '300px' }}>
+        {windowWidth}
+      </span> */}
       <main className="main">
         {window.innerWidth < 1024 ? (
           <div
@@ -123,7 +136,9 @@ const Home = () => {
               display: scrollY > 11000 ? 'none' : 'block',
             }}
           >
-            <span>Filter</span> <AiOutlineFilter />
+            <span>Filter </span>
+
+            <AiOutlineFilter />
           </div>
         ) : (
           <>
@@ -134,6 +149,7 @@ const Home = () => {
           <Cards />
         </section>
       </main>
+
       {!isError && <Pagination />}
     </>
   );

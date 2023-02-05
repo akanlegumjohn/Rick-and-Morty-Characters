@@ -25,21 +25,22 @@ const Character = () => {
           <img src={character.image} alt={character.name} />
         </div>
         <p>
-          This character goes by the name
-          <span className="character--name">{character.name}.</span>
-          {character.gender === 'Male' ? 'He' : 'She'} is a
+          The name of this character in rick and morty animation is
+          <span className="character--name"> {character.name}. </span>
+          {character.gender === 'Male' ? 'He ' : 'She '}
           <span>
-            {character.species}, {character.gender}
+            is
+            {' ' + character.species}, {' ' + character.gender + ' '}
           </span>
-          and is currently
+          and currently
           {character.status === 'Alive' && (
             <span style={{ color: 'green', fontWeight: '700' }}>
-              {character.status}.
+              {' ' + character.status}.
             </span>
           )}
           {character.status === 'unknown' && (
             <span style={{ color: 'black', fontWeight: '700' }}>
-              {character.status}.
+              {' ' + character.status}.
             </span>
           )}
           {character.status === 'Dead' && (
@@ -47,17 +48,17 @@ const Character = () => {
               {character.status}.
             </span>
           )}
-          {character.gender === 'Male' ? 'He' : 'She'} is from
+          {character.gender === 'Male' ? ' He' : ' She'} is from
           {character.origin.name === 'unknown' ? (
-            <span>an unknown origin </span>
+            <span> an unknown origin </span>
           ) : (
-            <span>{character.origin.name}</span>
+            <span>{' ' + character.origin.name} </span>
           )}
           and is currently located at the{' '}
           <span className="char--location">{character.location.name}.</span>
           <span className="char--name">{character.name}</span> was created on
           <span className="date">
-            {createdDate.toLocaleString('en-US', options)}.
+            {' ' + createdDate.toLocaleString('en-US', options)}.
           </span>
           <div className="back--link--container">
             <Link to="/" className="back--to--char--link">

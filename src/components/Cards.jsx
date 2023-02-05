@@ -1,13 +1,14 @@
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 // import { GiDeathSkull } from 'react-icons/gi';
 
 const Cards = () => {
   const { charactersDetails, isError, searchedName } = useSelector(
     (state) => state.characters
   );
-
-  //Must fixed, this logic is not working
+  const navigate = useNavigate();
+  // const name = 'Ama'
+  // name.
   if (isError) {
     return (
       <div className="no--results-container">
@@ -18,11 +19,14 @@ const Cards = () => {
     );
   } else {
     return charactersDetails?.results?.map((character) => (
-      <div className="character" key={character.id}>
-        <Link to={`/${character.id}`} className="character--link">
-          <div className="image--container">
-            <img src={character.image} alt={character.name} />
-          </div>
+      <div
+        className="character"
+        key={character.id}
+        onClick={() => navigate(`/${character.id}`)}
+      >
+        <div className="image--container">
+          <img src={character.image} alt={character.name} />
+
           {character.status === 'Alive' && (
             <p className="status" style={{ backgroundColor: 'green' }}>
               {character.status}
@@ -39,20 +43,29 @@ const Cards = () => {
               {/* <GiDeathSkull /> */}
             </p>
           )}
-
-          <div className="  character--details">
-            <p className="gender">
-              {character.gender} - <span>{character.species}</span>
+        </div>
+        <div className="  character--details">
+          <p className="gender">
+            {character.gender} - <span>{character.species}</span>
+          </p>
+          <p className="name"> {character.name}</p>
+          <label htmlFor="loc">Last known location:</label>
+          {character.location.name.startsWith('Earth') ? (
+            <p className="location" id="loc">
+              Earth
             </p>
-            <p className="name"> {character.name}</p>
-            <label htmlFor="loc">Last known location:</label>
+          ) : (
             <p className="location" id="loc">
               {character.location.name}
             </p>
-            <label htmlFor="orig">First seen in:</label>
-            <p className="origin"> {character.origin.name}</p>
-          </div>
-        </Link>
+          )}
+          <label htmlFor="orig">First seen in:</label>
+          {character.origin.name.startsWith('Earth') ? (
+            <p className="origin">Earth</p>
+          ) : (
+            <p className="origin">{character.origin.name}</p>
+          )}
+        </div>
       </div>
     ));
   }
