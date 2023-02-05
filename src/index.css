@@ -789,6 +789,7 @@ header img {
   .single--character--container .back--to--char--link {
     padding: 0px 15px 15px 20px;
     margin: 15px 0px;
+    background-color: var(--clr);
   }
   .single--character--container .back--to--char--link span {
     font-size: 30px;
