@@ -367,6 +367,7 @@ header img {
 .cards--container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1050px);
   gap: 30px;
   cursor: pointer;
   margin: 30px 100px 0px 0px;
@@ -473,6 +474,7 @@ header img {
   }
   .cards--container {
     grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1090px);
   }
 }
 @media screen and (max-width: 3600px) {
@@ -484,10 +486,16 @@ header img {
   .main {
     grid-template-columns: 17% 83%;
   }
+  .cards--container {
+    grid-template-rows: repeat(3, 990px);
+  }
 }
 @media screen and (max-width: 3000px) {
   .main {
     grid-template-columns: 20% 80%;
+  }
+  .cards--container {
+    grid-template-rows: repeat(3, 980px);
   }
 }
 @media screen and (max-width: 2600px) {
@@ -496,6 +504,8 @@ header img {
   }
   .cards--container {
     grid-template-columns: repeat(4, 1fr);
+
+    grid-template-rows: repeat(3, 1000px);
   }
 }
 @media screen and (max-width: 2360px) {
@@ -504,6 +514,8 @@ header img {
   }
   .cards--container {
     grid-template-columns: repeat(3, 1fr);
+
+    grid-template-rows: repeat(3, 990px);
   }
 }
 @media screen and (max-width: 2040px) {

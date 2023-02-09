@@ -25,7 +25,7 @@ const Character = () => {
           <img src={character.image} alt={character.name} />
         </div>
         <p>
-          The name of this character in rick and morty animation is
+          The name of this character in the rick and morty animation is
           <span className="character--name"> {character.name}. </span>
           {character.gender === 'Male' ? 'He ' : 'She '}
           <span>
@@ -35,7 +35,7 @@ const Character = () => {
           and currently
           {character.status === 'Alive' && (
             <span style={{ color: 'green', fontWeight: '700' }}>
-              {' ' + character.status}.
+              {character.status}.
             </span>
           )}
           {character.status === 'unknown' && (
