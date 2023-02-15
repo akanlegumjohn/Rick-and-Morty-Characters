@@ -675,25 +675,25 @@ header img {
 
   .gender {
     padding-top: 20px;
-    font-size: 60px;
+    font-size: 45px;
     text-align: left;
 
   }
 
   .name {
-    font-size: 70px;
+    font-size: 60px;
     font-weight: 600;
     line-height: 5.5rem;
   }
   .character--details label {
-    font-size: 55px;
+    font-size: 50px;
     padding: 5px;
     font-weight: 100;
   }
   .location,
   .origin {
     font-weight: 600;
-    font-size: 60px;
+    font-size: 55px;
     line-height: 4.5rem;
     padding: 5px;
   }
