@@ -39,17 +39,17 @@ import Header from '../components/Header';
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
-  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  // useEffect(() => {
-  //   const handleWindowResize = () => {
-  //     setWindowWidth(window.innerWidth);
-  //   };
-  //   window.addEventListener('resize', handleWindowResize);
-  //   return () => {
-  //     window.removeEventListener('resize', handleWindowResize);
-  //   };
-  // }, []);
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleWindowResize);
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
   useEffect(() => {
     function handleScroll() {
       setScrollY(window.scrollY);
@@ -121,10 +121,10 @@ const Home = () => {
     <>
       {showFilter && <FilterIcon />}
       <Searchbar />
-      <Header />
-      {/* <span style={{ fontSize: '80px', marginLeft: '300px' }}>
+      <span style={{ fontSize: '80px', marginLeft: '300px' }}>
         {windowWidth}
-      </span> */}
+      </span>
+      <Header />
       <main className="main">
         {window.innerWidth < 1024 ? (
           <div

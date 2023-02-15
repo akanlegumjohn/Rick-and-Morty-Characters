@@ -367,7 +367,7 @@ header img {
 .cards--container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(3, 1050px);
+  grid-template-rows: repeat(3, 1fr);
   gap: 30px;
   cursor: pointer;
   margin: 30px 100px 0px 0px;
@@ -653,44 +653,48 @@ header img {
   .cards--container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0px;
+    gap: 20px;
     cursor: pointer;
+    margin-top: -90px;
   }
   .character {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0px 30px;
-    height: 90%;
+    height: 100%;
   }
   .image--container img {
-    height: 90%;
+    height: 100%;
   }
   .status {
     top: 0;
     right: 50%;
+    font-size: 50px;
+
   }
 
   .gender {
-    padding-top: 10px;
-    font-size: 37px;
+    padding-top: 20px;
+    font-size: 60px;
     text-align: left;
+
   }
 
   .name {
-    font-size: 40px;
+    font-size: 70px;
     font-weight: 600;
-    line-height: 2.5rem;
+    line-height: 5.5rem;
   }
   .character--details label {
-    font-size: 35px;
+    font-size: 55px;
     padding: 5px;
     font-weight: 100;
   }
   .location,
   .origin {
     font-weight: 600;
-    font-size: 35px;
-    line-height: 3rem;
+    font-size: 60px;
+    line-height: 4.5rem;
     padding: 5px;
   }
   .pagination {
@@ -776,6 +780,45 @@ header img {
   .image--container img {
     height: 100%;
   }
+  
+  .gender {
+    padding-top: 10px;
+    font-size: 40px;
+  }
+
+  .character--details .name {
+    font-size: 47px;
+    font-weight: 600;
+    line-height: 3rem;
+  }
+  .character--details label {
+    font-size: 40px;
+  }
+  .location,
+  .origin {
+    font-size: 45px;
+    line-height: 3rem;
+    padding: 5px;
+  }
+
+}
+@media screen and (max-width: 1021px) {
+ 
+.filter--label--container {
+    width: 300px;
+  }
+.filter--label--container label {
+  font-size: 30px;
+  font-weight: 300;
+
+}
+.filter--input--container input {
+    width: 50px;
+    height: 50px;
+  }
+  .modal--footer--btn{
+    height: 20px;
+  }
 
 }
 @media screen and (max-width: 912px) {
@@ -785,6 +828,7 @@ header img {
     border-radius: 30px;
   }
   .modal--footer--btn {
+    height: 60px;
     padding: 10px 40px 10px 40px;
     font-size: 20px;
   }
