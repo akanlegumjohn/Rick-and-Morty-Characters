@@ -8,7 +8,6 @@ const Character = () => {
   const character = charactersDetails?.results.find(
     (char) => char.id === Number(characterId)
   );
-  console.log(character);
   let createdDate = new Date(character.created);
   let options = {
     weekday: 'long',
