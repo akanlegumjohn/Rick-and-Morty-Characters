@@ -14,5 +14,9 @@ const getCharacters = async (
   return response.data;
 };
 
-const characterService = { getCharacters };
+const getSelectedCharacter = async (id) =>{
+  const response = await axios.get(`${API_URL}${id}`);
+  return response.data;
+}
+const characterService = { getCharacters , getSelectedCharacter};
 export default characterService;
