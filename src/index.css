@@ -716,7 +716,7 @@ header img {
     padding: 20px;
   }
 
-  .single--character--container p {
+  .single--character--container .p {
     font-size: 50px;
     line-height: 5.5rem;
     padding: 0px 30px 0px 40px;
@@ -937,7 +937,7 @@ header img {
     padding: 0;
     letter-spacing: 2px;
   }
-  .single--character--container p {
+  .single--character--container .p {
     width: 85%;
   }
 }
@@ -1097,7 +1097,7 @@ header img {
     padding: 5px;
   }
 
-  .single--character--container p {
+  .single--character--container .p {
     font-size: 25px;
     line-height: 2.3rem;
     padding: 0px 30px 0px 40px;
@@ -1205,7 +1205,7 @@ header img {
     margin: 5px;
     padding: 5px;
   }
-  .single--character--container p {
+  .single--character--container .p {
     width: 100%;
   }
   .single--character--container .back--to--char--link {
