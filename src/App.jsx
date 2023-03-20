@@ -19,6 +19,11 @@ function App() {
         <Route path="/episodes" element={<Episode />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/:characterId" element={<Character />} />
+        <Route path="*" element={ <div className="no--results-container">
+        <h1>No results for this selection</h1>
+        <p>Try searching for something else </p>
+        <h2>NO CHARACTER FOUND</h2>
+      </div>}/>
       </Routes>
     </BrowserRouter>
   );
