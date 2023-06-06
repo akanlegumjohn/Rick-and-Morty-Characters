@@ -364,6 +364,7 @@ header img {
   opacity: 2;
 }
 /* === CHARACTERS CARDS=== */
+
 .cards--container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -373,6 +374,7 @@ header img {
   margin: 30px 100px 0px 0px;
 }
 .character {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border: 2px solid var(--light_blue_color);
   background-color: var(--light_pink_color);
   border-radius: 10px;
