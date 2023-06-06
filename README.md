@@ -13,8 +13,8 @@ https://nimble-sawine-02e90f.netlify.app/
 
 ## To set it up locally,
 ```
-1. git clone https://github.com/akanlegumjohn/Rick-and-Morty-Characters.git 
-2. npm install
-3. cd Rick-and-Morty-Characters
-3. npm run dev
+git clone https://github.com/akanlegumjohn/Rick-and-Morty-Characters.git 
+npm install
+cd Rick-and-Morty-Characters
+npm run dev
 ```
